@@ -15,5 +15,7 @@ public abstract class Descuento {
 		this.valor = valor;
 	}
 	
-	public abstract float valorFinal(float valorInicial) throws ValorCeroException , TotalNegativoException; //metodo abstracto, quien me herede tiene que implementarme!!
+	public abstract float valorFinal(float valorInicial) throws ValorCeroException , TotalNegativoException; 
+
+
 }
