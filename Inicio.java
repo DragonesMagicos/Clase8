@@ -14,14 +14,14 @@ public class Inicio {
 		String archivoEntrada = "compra.txt"; //en la raiz del proyecto
 		List<String> lista = new ArrayList<String>();
 		Carrito carrito = new Carrito(LocalDateTime.parse("2023-01-13T11:12:00"));
-		Persona persona1 = new Persona("fer", "torres", LocalDateTime.parse("1980-03-13T11:12:00"), carrito );
+		Persona persona1 = new Persona("ffff", "trrrr", LocalDateTime.parse("1980-03-13T11:12:00"), carrito );
 		Carrito miCarrito = persona1.getCarrito();
 
 		try {
 				lista = Files.readAllLines(Paths.get(archivoEntrada));
-				lista.remove(0);//la primera linea es la descripción no la necesito //lista = { "5000 jabón 2000" ,  "660 esponja 4000"  ,  1000 chocolates2 6000  ,  4000 chocolates3 7000    }	
-				for(String linea : lista) { //linea -> "5000 jabón 2000" -> "660 esponja 4000" ->  1000 chocolates2 6000
-					String[] datosDeProducto = linea.split(" "); //datosProducto -> [5000 ,jabón ,2000] -> 
+				lista.remove(0);    	
+				for(String linea : lista) { 
+					String[] datosDeProducto = linea.split(" ");  
 					Producto p = new Producto(datosDeProducto[1], datosDeProducto[2],Float.parseFloat(datosDeProducto[0]));
 					miCarrito.agregarProducto(p);
 				}
