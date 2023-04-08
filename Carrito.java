@@ -14,14 +14,14 @@ public class Carrito {
 		this.productos = new ArrayList<Producto> ();
 	}
 
-	//agregar productos a lista
+	
 	public void agregarProducto(Producto p) {
 		if(!existeProducto(p)) {
 			this.productos.add(p);
 		}
 	}
 
-	//consultar si un producto existe en la lista - para nostros la igualdad quiere decir que los productos tengan el mismo codigo
+	
 	public boolean existeProducto(Producto p) {
 		for(Producto prod : productos) {
 			if(prod.getCodigo().equals(p.getCodigo())) {
@@ -56,7 +56,7 @@ public class Carrito {
 		this.fechaCompra = fechaCompra;
 	}
 	
-	public float costoFinal(Descuento desc) throws ValorCeroException, TotalNegativoException{ //polimorfismo
+	public float costoFinal(Descuento desc) throws ValorCeroException, TotalNegativoException{ 
 		float total = 0;
 		for( Producto p : this.productos) {
 			total = total + p.costoFinal();
